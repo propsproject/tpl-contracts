@@ -1,0 +1,411 @@
+{
+  "contractName": "TPLERC721RestrictedOwnerInterface",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "canOwn",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getRegistry",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.4.25;\n\n\n/**\n * @title TPL ERC721 Restricted Owner interface. EIP-165 ID: 0xfe39d63a\n */\ninterface TPLERC721RestrictedOwnerInterface {\n  /**\n   * @notice Check if an account `account` is approved to own NFTs.\n   * @param account address The account in question.\n   * @return True if account can own NFTs, false otherwise.\n   */  \n  function canOwn(address account) external view returns (bool);\n\n  /**\n   * @notice Get the account of the utilized attribute registry.\n   * @return The account of the registry.\n   */\n  function getRegistry() external view returns (address);\n}",
+  "sourcePath": "/Users/jretina/Programming/PROPSProject/tpl-contracts/contracts/examples/token/ERC721/TPLERC721RestrictedOwnerInterface.sol",
+  "ast": {
+    "absolutePath": "/Users/jretina/Programming/PROPSProject/tpl-contracts/contracts/examples/token/ERC721/TPLERC721RestrictedOwnerInterface.sol",
+    "exportedSymbols": {
+      "TPLERC721RestrictedOwnerInterface": [
+        5400
+      ]
+    },
+    "id": 5401,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5387,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".25"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:11"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title TPL ERC721 Restricted Owner interface. EIP-165 ID: 0xfe39d63a",
+        "fullyImplemented": false,
+        "id": 5400,
+        "linearizedBaseContracts": [
+          5400
+        ],
+        "name": "TPLERC721RestrictedOwnerInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Check if an account `account` is approved to own NFTs.\n@param account address The account in question.\n@return True if account can own NFTs, false otherwise.",
+            "id": 5394,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "canOwn",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5390,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5389,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5394,
+                  "src": "366:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5388,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "366:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "365:17:11"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 5393,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5392,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5394,
+                  "src": "406:4:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 5391,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "406:4:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "405:6:11"
+            },
+            "scope": 5400,
+            "src": "350:62:11",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Get the account of the utilized attribute registry.\n@return The account of the registry.",
+            "id": 5399,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getRegistry",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5395,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "555:2:11"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 5398,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5397,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5399,
+                  "src": "581:7:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5396,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "581:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "580:9:11"
+            },
+            "scope": 5400,
+            "src": "535:55:11",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5401,
+        "src": "107:485:11"
+      }
+    ],
+    "src": "0:592:11"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/jretina/Programming/PROPSProject/tpl-contracts/contracts/examples/token/ERC721/TPLERC721RestrictedOwnerInterface.sol",
+    "exportedSymbols": {
+      "TPLERC721RestrictedOwnerInterface": [
+        5400
+      ]
+    },
+    "id": 5401,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5387,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".25"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:11"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title TPL ERC721 Restricted Owner interface. EIP-165 ID: 0xfe39d63a",
+        "fullyImplemented": false,
+        "id": 5400,
+        "linearizedBaseContracts": [
+          5400
+        ],
+        "name": "TPLERC721RestrictedOwnerInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Check if an account `account` is approved to own NFTs.\n@param account address The account in question.\n@return True if account can own NFTs, false otherwise.",
+            "id": 5394,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "canOwn",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5390,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5389,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5394,
+                  "src": "366:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5388,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "366:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "365:17:11"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 5393,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5392,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5394,
+                  "src": "406:4:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 5391,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "406:4:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "405:6:11"
+            },
+            "scope": 5400,
+            "src": "350:62:11",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Get the account of the utilized attribute registry.\n@return The account of the registry.",
+            "id": 5399,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getRegistry",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5395,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "555:2:11"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 5398,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5397,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5399,
+                  "src": "581:7:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5396,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "581:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "580:9:11"
+            },
+            "scope": 5400,
+            "src": "535:55:11",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5401,
+        "src": "107:485:11"
+      }
+    ],
+    "src": "0:592:11"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.25+commit.59dbf8f1.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.0-beta.1",
+  "updatedAt": "2019-01-09T15:27:56.369Z"
+}

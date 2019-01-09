@@ -24,7 +24,8 @@
     "coverage": "./node_modules/.bin/solidity-coverage",
     "linter": "./node_modules/.bin/solhint 'contracts/**/*.sol'",
     "deploy": "node scripts/deploy/deploy.js",
-    "tx": "node scripts/cli/cli.js"
+    "tx": "node scripts/cli/cli.js",
+    "doc": "apidoc -i scripts/deploy/ -o public/doc/ --debug"
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
@@ -34,6 +35,7 @@
     "web3": "^1.0.0-beta.36"
   },
   "dependencies": {
+    "apidoc": "^0.17.7",
     "openzeppelin-solidity": "2.0.0"
   }
 }

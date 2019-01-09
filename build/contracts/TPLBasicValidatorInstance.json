@@ -1,0 +1,1226 @@
+{
+  "contractName": "TPLBasicValidatorInstance",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getJurisdiction",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isValidator",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "name": "attributeTypeID",
+          "type": "uint256"
+        }
+      ],
+      "name": "canIssueAttribute",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        },
+        {
+          "name": "",
+          "type": "bytes1"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "name": "attributeTypeID",
+          "type": "uint256"
+        }
+      ],
+      "name": "canRevokeAttribute",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        },
+        {
+          "name": "",
+          "type": "bytes1"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "attributeTypeID",
+          "type": "uint256"
+        }
+      ],
+      "name": "canIssueAttributeType",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getValidAttributeID",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "registry",
+          "type": "address"
+        },
+        {
+          "name": "validAttributeTypeID",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "issueAttribute",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "revokeAttribute",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506040516040806109f683398101604052805160209091015160008054600160a060020a03909316600160a060020a031993841681179091556001805490931617909155600255610990806100666000396000f30060806040526004361061008d5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416631fa1087c811461009257806328efdc44146100d0578063330e9e3d146100e757806340e2687e1461011057806399342c7c14610125578063a20673f414610192578063b61ef753146101c3578063eac5a01c146101db575b600080fd5b34801561009e57600080fd5b506100a7610202565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b3480156100dc57600080fd5b506100e561021e565b005b3480156100f357600080fd5b506100fc610234565b604080519115158252519081900360200190f35b34801561011c57600080fd5b506100e56103da565b34801561013157600080fd5b5061015673ffffffffffffffffffffffffffffffffffffffff600435166024356103e3565b6040805192151583527fff0000000000000000000000000000000000000000000000000000000000000090911660208301528051918290030190f35b34801561019e57600080fd5b5061015673ffffffffffffffffffffffffffffffffffffffff60043516602435610529565b3480156101cf57600080fd5b506100fc600435610775565b3480156101e757600080fd5b506101f0610833565b60408051918252519081900360200190f35b60015473ffffffffffffffffffffffffffffffffffffffff1690565b61022733610839565b151561023257600080fd5b565b600080600080600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166397f3c8066040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401602060405180830381600087803b1580156102c057600080fd5b505af11580156102d4573d6000803e3d6000fd5b505050506040513d60208110156102ea57600080fd5b50519250600091505b828210156103cf57600154604080517fb5d8962700000000000000000000000000000000000000000000000000000000815260048101859052905173ffffffffffffffffffffffffffffffffffffffff9092169163b5d89627916024808201926020929091908290030181600087803b15801561036f57600080fd5b505af1158015610383573d6000803e3d6000fd5b505050506040513d602081101561039957600080fd5b5051905073ffffffffffffffffffffffffffffffffffffffff81163014156103c457600193506103d4565b6001909101906102f3565b600093505b50505090565b610227336108e2565b6000808260025414151561041c5750600090507fa000000000000000000000000000000000000000000000000000000000000000610522565b60008054600254604080517f4b5f297a00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8981166004830152602482019390935290519190921692634b5f297a92604480820193602093909283900390910190829087803b15801561049f57600080fd5b505af11580156104b3573d6000803e3d6000fd5b505050506040513d60208110156104c957600080fd5b5051156104fb5750600090507fb000000000000000000000000000000000000000000000000000000000000000610522565b50600190507f01000000000000000000000000000000000000000000000000000000000000005b9250929050565b600080600080846002541415156105665760007fa0000000000000000000000000000000000000000000000000000000000000009350935061076c565b60008054600254604080517f4b5f297a00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8b81166004830152602482019390935290519190921692634b5f297a92604480820193602093909283900390910190829087803b1580156105e957600080fd5b505af11580156105fd573d6000803e3d6000fd5b505050506040513d602081101561061357600080fd5b505115156106475760007fb0000000000000000000000000000000000000000000000000000000000000009350935061076c565b600154600254604080517f17cf31d800000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8a811660048301526024820193909352815192909316926317cf31d892604480830193928290030181600087803b1580156106c357600080fd5b505af11580156106d7573d6000803e3d6000fd5b505050506040513d60408110156106ed57600080fd5b508051602090910151909250905073ffffffffffffffffffffffffffffffffffffffff821630146107445760007fc0000000000000000000000000000000000000000000000000000000000000009350935061076c565b60017f0100000000000000000000000000000000000000000000000000000000000000935093505b50509250929050565b60008160025414801561082d5750600154600254604080517ff287f8fb00000000000000000000000000000000000000000000000000000000815230600482015260248101929092525173ffffffffffffffffffffffffffffffffffffffff9092169163f287f8fb916044808201926020929091908290030181600087803b15801561080057600080fd5b505af1158015610814573d6000803e3d6000fd5b505050506040513d602081101561082a57600080fd5b50515b92915050565b60025490565b600154600254604080517f50135c3a00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff858116600483015260248201939093526000604482018190529151919392909216916350135c3a916064808301928692919082900301818387803b1580156108c257600080fd5b505af11580156108d6573d6000803e3d6000fd5b50600195945050505050565b600154600254604080517ff9292ffb00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff858116600483015260248201939093529051600093929092169163f9292ffb91604480820192869290919082900301818387803b1580156108c257600080fd00a165627a7a7230582059aab5590e6c1de59e5939bc64eab743424e1ba121d6f24fa8aa8caf3d9c41090029",
+  "deployedBytecode": "0x60806040526004361061008d5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416631fa1087c811461009257806328efdc44146100d0578063330e9e3d146100e757806340e2687e1461011057806399342c7c14610125578063a20673f414610192578063b61ef753146101c3578063eac5a01c146101db575b600080fd5b34801561009e57600080fd5b506100a7610202565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b3480156100dc57600080fd5b506100e561021e565b005b3480156100f357600080fd5b506100fc610234565b604080519115158252519081900360200190f35b34801561011c57600080fd5b506100e56103da565b34801561013157600080fd5b5061015673ffffffffffffffffffffffffffffffffffffffff600435166024356103e3565b6040805192151583527fff0000000000000000000000000000000000000000000000000000000000000090911660208301528051918290030190f35b34801561019e57600080fd5b5061015673ffffffffffffffffffffffffffffffffffffffff60043516602435610529565b3480156101cf57600080fd5b506100fc600435610775565b3480156101e757600080fd5b506101f0610833565b60408051918252519081900360200190f35b60015473ffffffffffffffffffffffffffffffffffffffff1690565b61022733610839565b151561023257600080fd5b565b600080600080600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166397f3c8066040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401602060405180830381600087803b1580156102c057600080fd5b505af11580156102d4573d6000803e3d6000fd5b505050506040513d60208110156102ea57600080fd5b50519250600091505b828210156103cf57600154604080517fb5d8962700000000000000000000000000000000000000000000000000000000815260048101859052905173ffffffffffffffffffffffffffffffffffffffff9092169163b5d89627916024808201926020929091908290030181600087803b15801561036f57600080fd5b505af1158015610383573d6000803e3d6000fd5b505050506040513d602081101561039957600080fd5b5051905073ffffffffffffffffffffffffffffffffffffffff81163014156103c457600193506103d4565b6001909101906102f3565b600093505b50505090565b610227336108e2565b6000808260025414151561041c5750600090507fa000000000000000000000000000000000000000000000000000000000000000610522565b60008054600254604080517f4b5f297a00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8981166004830152602482019390935290519190921692634b5f297a92604480820193602093909283900390910190829087803b15801561049f57600080fd5b505af11580156104b3573d6000803e3d6000fd5b505050506040513d60208110156104c957600080fd5b5051156104fb5750600090507fb000000000000000000000000000000000000000000000000000000000000000610522565b50600190507f01000000000000000000000000000000000000000000000000000000000000005b9250929050565b600080600080846002541415156105665760007fa0000000000000000000000000000000000000000000000000000000000000009350935061076c565b60008054600254604080517f4b5f297a00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8b81166004830152602482019390935290519190921692634b5f297a92604480820193602093909283900390910190829087803b1580156105e957600080fd5b505af11580156105fd573d6000803e3d6000fd5b505050506040513d602081101561061357600080fd5b505115156106475760007fb0000000000000000000000000000000000000000000000000000000000000009350935061076c565b600154600254604080517f17cf31d800000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8a811660048301526024820193909352815192909316926317cf31d892604480830193928290030181600087803b1580156106c357600080fd5b505af11580156106d7573d6000803e3d6000fd5b505050506040513d60408110156106ed57600080fd5b508051602090910151909250905073ffffffffffffffffffffffffffffffffffffffff821630146107445760007fc0000000000000000000000000000000000000000000000000000000000000009350935061076c565b60017f0100000000000000000000000000000000000000000000000000000000000000935093505b50509250929050565b60008160025414801561082d5750600154600254604080517ff287f8fb00000000000000000000000000000000000000000000000000000000815230600482015260248101929092525173ffffffffffffffffffffffffffffffffffffffff9092169163f287f8fb916044808201926020929091908290030181600087803b15801561080057600080fd5b505af1158015610814573d6000803e3d6000fd5b505050506040513d602081101561082a57600080fd5b50515b92915050565b60025490565b600154600254604080517f50135c3a00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff858116600483015260248201939093526000604482018190529151919392909216916350135c3a916064808301928692919082900301818387803b1580156108c257600080fd5b505af11580156108d6573d6000803e3d6000fd5b50600195945050505050565b600154600254604080517ff9292ffb00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff858116600483015260248201939093529051600093929092169163f9292ffb91604480820192869290919082900301818387803b1580156108c257600080fd00a165627a7a7230582059aab5590e6c1de59e5939bc64eab743424e1ba121d6f24fa8aa8caf3d9c41090029",
+  "sourceMap": "241:1240:15:-;;;770:186;8:9:-1;5:2;;;30:1;27;20:12;5:2;770:186:15;;;;;;;;;;;;;;;;;;;1255:9:12;:48;;-1:-1:-1;;;;;1255:48:12;;;-1:-1:-1;;;;;;1255:48:12;;;;;;;;;1309:52;;;;;;;;;1367:21;:44;241:1240:15;;;;;;",
+  "deployedSourceMap": "241:1240:15:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5137:99:12;;8:9:-1;5:2;;;30:1;27;20:12;5:2;5137:99:12;;;;;;;;;;;;;;;;;;;;;;;1149:82:15;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1149:82:15;;;;;;1574:328:12;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1574:328:12;;;;;;;;;;;;;;;;;;;;;;1395:84:15;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1395:84:15;;;;2945:498:12;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;2945:498:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3938:778;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;3938:778:12;;;;;;;;;2208:248;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;2208:248:12;;;;;4855:102;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4855:102:12;;;;;;;;;;;;;;;;;;;;5137:99;5217:13;;;;5137:99;:::o;1149:82:15:-;1198:27;1214:10;1198:15;:27::i;:::-;1190:36;;;;;;;;1149:82::o;1574:328:12:-;1620:4;1632:23;1705:9;1754:17;1658:13;;;;;;;;;;;:29;;;:31;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1658:31:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1658:31:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1658:31:12;;-1:-1:-1;1717:1:12;;-1:-1:-1;1700:179:12;1724:15;1720:1;:19;1700:179;;;1774:13;;:29;;;;;;;;;;;;;;:13;;;;;:26;;:29;;;;;;;;;;;;;;;:13;;:29;;;5:2:-1;;;;30:1;27;20:12;5:2;1774:29:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1774:29:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1774:29:12;;-1:-1:-1;1815:26:12;;;1836:4;1815:26;1811:62;;;1860:4;1853:11;;;;1811:62;1741:3;;;;;1700:179;;;1892:5;1885:12;;1574:328;;;;;:::o;1395:84:15:-;1445:28;1462:10;1445:16;:28::i;2945:498:12:-;3049:4;3055:6;3173:15;3148:21;;:40;;3144:84;;;-1:-1:-1;3206:5:12;;-1:-1:-1;3198:23:12;;;3144:84;3316:9;;;3348:21;;3316:54;;;;;;:9;:54;;;;;;;;;;;;;;;;:9;;;;;:22;;:54;;;;;;;;;;;;;;;;;;:9;:54;;;5:2:-1;;;;30:1;27;20:12;5:2;3316:54:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;3316:54:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;3316:54:12;3312:98;;;-1:-1:-1;3388:5:12;;-1:-1:-1;3380:23:12;;;3312:98;-1:-1:-1;3424:4:12;;-1:-1:-1;3416:22:12;2945:498;;;;;;:::o;3938:778::-;4043:4;4049:6;4471:17;4490:11;4168:15;4143:21;;:40;;4139:84;;;4201:5;4193:23;;;;;;;4139:84;4311:9;;;4343:21;;4311:54;;;;;;:9;:54;;;;;;;;;;;;;;;;:9;;;;;:22;;:54;;;;;;;;;;;;;;;;;;:9;:54;;;5:2:-1;;;;30:1;27;20:12;5:2;4311:54:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;4311:54:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;4311:54:12;4310:55;4306:99;;;4383:5;4375:23;;;;;;;4306:99;4505:13;;4563:21;;4505:85;;;;;;:13;:85;;;;;;;;;;;;;;;;:13;;;;;:35;;:85;;;;;;;;;;;:13;;:85;;;5:2:-1;;;;30:1;27;20:12;5:2;4505:85:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;4505:85:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;4505:85:12;;;;;;;;;-1:-1:-1;4505:85:12;-1:-1:-1;4613:26:12;;;4634:4;4613:26;4609:70;;4657:5;4649:23;;;;;;;4609:70;4697:4;4689:22;;;;;3938:778;;;;;;;;:::o;2208:248::-;2295:4;2347:15;2322:21;;:40;:123;;;;-1:-1:-1;2372:13:12;;2423:21;;2372:73;;;;;;2416:4;2372:73;;;;;;;;;;;;:13;;;;;:35;;:73;;;;;;;;;;;;;;;:13;;:73;;;5:2:-1;;;;30:1;27;20:12;5:2;2372:73:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;2372:73:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;2372:73:12;2322:123;2307:144;2208:248;-1:-1:-1;;2208:248:12:o;4855:102::-;4931:21;;4855:102;:::o;5535:157::-;5607:13;;5645:21;;5607:63;;;;;;:13;:63;;;;;;;;;;;;;;5595:4;5607:63;;;;;;;;5595:4;;5607:13;;;;;:28;;:63;;;;;5595:4;;5607:63;;;;;;;5595:4;5607:13;:63;;;5:2:-1;;;;30:1;27;20:12;5:2;5607:63:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;5683:4:12;;5535:157;-1:-1:-1;;;;;5535:157:12:o;5979:156::-;6052:13;;6091:21;;6052:61;;;;;;:13;:61;;;;;;;;;;;;;;;;6040:4;;6052:13;;;;;:29;;:61;;;;;6040:4;;6052:61;;;;;;;;6040:4;6052:13;:61;;;5:2:-1;;;;30:1;27;20:12",
+  "source": "pragma solidity ^0.4.25;\n\nimport \"../examples/validator/TPLBasicValidator.sol\";\nimport \"../AttributeRegistryInterface.sol\";\n\n\n/**\n * @title An instance of TPLBasicValidator with external functions to add and\n * revoke a given attribute.\n */\ncontract TPLBasicValidatorInstance is TPLBasicValidator {\n\n  /**\n  * @notice The constructor function, with an associated attribute registry at\n  * `registry` and an assignable attribute type with ID `validAttributeTypeID`.\n  * @param registry address The account of the associated attribute registry.  \n  * @param validAttributeTypeID uint256 The ID of the required attribute type.\n  * @dev Note that it may be appropriate to require that the referenced\n  * attribute registry supports the correct interface via EIP-165.\n  */\n  constructor(\n    AttributeRegistryInterface registry,\n    uint256 validAttributeTypeID\n  ) public TPLBasicValidator(registry, validAttributeTypeID) {\n    registry; // no-empty-blocks\n  }\n\n  /**\n   * @notice Issue an attribute of the type with the default ID to `msg.sender`\n   * on the jurisdiction. Values are left at zero and the method may be called\n   * by anyone.\n   */  \n  function issueAttribute() external {\n    require(_issueAttribute(msg.sender));\n  }\n\n  /**\n   * @notice Revoke an attribute from the type with the default ID from\n   * `msg.sender` on the jurisdiction. This method may be called by anyone.\n   */\n  function revokeAttribute() external {\n    require(_revokeAttribute(msg.sender));\n  }\n}",
+  "sourcePath": "/Users/jretina/Programming/PROPSProject/tpl-contracts/contracts/mock/TPLBasicValidatorInstance.sol",
+  "ast": {
+    "absolutePath": "/Users/jretina/Programming/PROPSProject/tpl-contracts/contracts/mock/TPLBasicValidatorInstance.sol",
+    "exportedSymbols": {
+      "TPLBasicValidatorInstance": [
+        5792
+      ]
+    },
+    "id": 5793,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5751,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".25"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:15"
+      },
+      {
+        "absolutePath": "/Users/jretina/Programming/PROPSProject/tpl-contracts/contracts/examples/validator/TPLBasicValidator.sol",
+        "file": "../examples/validator/TPLBasicValidator.sol",
+        "id": 5752,
+        "nodeType": "ImportDirective",
+        "scope": 5793,
+        "sourceUnit": 5651,
+        "src": "26:53:15",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/jretina/Programming/PROPSProject/tpl-contracts/contracts/AttributeRegistryInterface.sol",
+        "file": "../AttributeRegistryInterface.sol",
+        "id": 5753,
+        "nodeType": "ImportDirective",
+        "scope": 5793,
+        "sourceUnit": 33,
+        "src": "80:43:15",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 5754,
+              "name": "TPLBasicValidator",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5650,
+              "src": "279:17:15",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_TPLBasicValidator_$5650",
+                "typeString": "contract TPLBasicValidator"
+              }
+            },
+            "id": 5755,
+            "nodeType": "InheritanceSpecifier",
+            "src": "279:17:15"
+          }
+        ],
+        "contractDependencies": [
+          5650,
+          5692
+        ],
+        "contractKind": "contract",
+        "documentation": "@title An instance of TPLBasicValidator with external functions to add and\nrevoke a given attribute.",
+        "fullyImplemented": true,
+        "id": 5792,
+        "linearizedBaseContracts": [
+          5792,
+          5650,
+          5692
+        ],
+        "name": "TPLBasicValidatorInstance",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 5768,
+              "nodeType": "Block",
+              "src": "918:38:15",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 5766,
+                    "name": "registry",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 5757,
+                    "src": "924:8:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AttributeRegistryInterface_$32",
+                      "typeString": "contract AttributeRegistryInterface"
+                    }
+                  },
+                  "id": 5767,
+                  "nodeType": "ExpressionStatement",
+                  "src": "924:8:15"
+                }
+              ]
+            },
+            "documentation": "@notice The constructor function, with an associated attribute registry at\n`registry` and an assignable attribute type with ID `validAttributeTypeID`.\n@param registry address The account of the associated attribute registry.  \n@param validAttributeTypeID uint256 The ID of the required attribute type.\n@dev Note that it may be appropriate to require that the referenced\nattribute registry supports the correct interface via EIP-165.",
+            "id": 5769,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "id": 5762,
+                    "name": "registry",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 5757,
+                    "src": "886:8:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AttributeRegistryInterface_$32",
+                      "typeString": "contract AttributeRegistryInterface"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 5763,
+                    "name": "validAttributeTypeID",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 5759,
+                    "src": "896:20:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  }
+                ],
+                "id": 5764,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 5761,
+                  "name": "TPLBasicValidator",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 5650,
+                  "src": "868:17:15",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_TPLBasicValidator_$5650_$",
+                    "typeString": "type(contract TPLBasicValidator)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "868:49:15"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5760,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5757,
+                  "name": "registry",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5769,
+                  "src": "787:35:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_AttributeRegistryInterface_$32",
+                    "typeString": "contract AttributeRegistryInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 5756,
+                    "name": "AttributeRegistryInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 32,
+                    "src": "787:26:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AttributeRegistryInterface_$32",
+                      "typeString": "contract AttributeRegistryInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5759,
+                  "name": "validAttributeTypeID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5769,
+                  "src": "828:28:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5758,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "828:7:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "781:79:15"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 5765,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "918:0:15"
+            },
+            "scope": 5792,
+            "src": "770:186:15",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 5779,
+              "nodeType": "Block",
+              "src": "1184:47:15",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 5774,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 8217,
+                              "src": "1214:3:15",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 5775,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "1214:10:15",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 5773,
+                          "name": "_issueAttribute",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5632,
+                          "src": "1198:15:15",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$_t_bool_$",
+                            "typeString": "function (address) returns (bool)"
+                          }
+                        },
+                        "id": 5776,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1198:27:15",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 5772,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        8220,
+                        8221
+                      ],
+                      "referencedDeclaration": 8220,
+                      "src": "1190:7:15",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 5777,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1190:36:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5778,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1190:36:15"
+                }
+              ]
+            },
+            "documentation": "@notice Issue an attribute of the type with the default ID to `msg.sender`\non the jurisdiction. Values are left at zero and the method may be called\nby anyone.",
+            "id": 5780,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "issueAttribute",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5770,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1172:2:15"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 5771,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1184:0:15"
+            },
+            "scope": 5792,
+            "src": "1149:82:15",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 5790,
+              "nodeType": "Block",
+              "src": "1431:48:15",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 5785,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 8217,
+                              "src": "1462:3:15",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 5786,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "1462:10:15",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 5784,
+                          "name": "_revokeAttribute",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5649,
+                          "src": "1445:16:15",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$_t_bool_$",
+                            "typeString": "function (address) returns (bool)"
+                          }
+                        },
+                        "id": 5787,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1445:28:15",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 5783,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        8220,
+                        8221
+                      ],
+                      "referencedDeclaration": 8220,
+                      "src": "1437:7:15",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 5788,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1437:37:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5789,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1437:37:15"
+                }
+              ]
+            },
+            "documentation": "@notice Revoke an attribute from the type with the default ID from\n`msg.sender` on the jurisdiction. This method may be called by anyone.",
+            "id": 5791,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "revokeAttribute",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5781,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1419:2:15"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 5782,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1431:0:15"
+            },
+            "scope": 5792,
+            "src": "1395:84:15",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5793,
+        "src": "241:1240:15"
+      }
+    ],
+    "src": "0:1481:15"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/jretina/Programming/PROPSProject/tpl-contracts/contracts/mock/TPLBasicValidatorInstance.sol",
+    "exportedSymbols": {
+      "TPLBasicValidatorInstance": [
+        5792
+      ]
+    },
+    "id": 5793,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5751,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".25"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:15"
+      },
+      {
+        "absolutePath": "/Users/jretina/Programming/PROPSProject/tpl-contracts/contracts/examples/validator/TPLBasicValidator.sol",
+        "file": "../examples/validator/TPLBasicValidator.sol",
+        "id": 5752,
+        "nodeType": "ImportDirective",
+        "scope": 5793,
+        "sourceUnit": 5651,
+        "src": "26:53:15",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/jretina/Programming/PROPSProject/tpl-contracts/contracts/AttributeRegistryInterface.sol",
+        "file": "../AttributeRegistryInterface.sol",
+        "id": 5753,
+        "nodeType": "ImportDirective",
+        "scope": 5793,
+        "sourceUnit": 33,
+        "src": "80:43:15",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 5754,
+              "name": "TPLBasicValidator",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5650,
+              "src": "279:17:15",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_TPLBasicValidator_$5650",
+                "typeString": "contract TPLBasicValidator"
+              }
+            },
+            "id": 5755,
+            "nodeType": "InheritanceSpecifier",
+            "src": "279:17:15"
+          }
+        ],
+        "contractDependencies": [
+          5650,
+          5692
+        ],
+        "contractKind": "contract",
+        "documentation": "@title An instance of TPLBasicValidator with external functions to add and\nrevoke a given attribute.",
+        "fullyImplemented": true,
+        "id": 5792,
+        "linearizedBaseContracts": [
+          5792,
+          5650,
+          5692
+        ],
+        "name": "TPLBasicValidatorInstance",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 5768,
+              "nodeType": "Block",
+              "src": "918:38:15",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 5766,
+                    "name": "registry",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 5757,
+                    "src": "924:8:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AttributeRegistryInterface_$32",
+                      "typeString": "contract AttributeRegistryInterface"
+                    }
+                  },
+                  "id": 5767,
+                  "nodeType": "ExpressionStatement",
+                  "src": "924:8:15"
+                }
+              ]
+            },
+            "documentation": "@notice The constructor function, with an associated attribute registry at\n`registry` and an assignable attribute type with ID `validAttributeTypeID`.\n@param registry address The account of the associated attribute registry.  \n@param validAttributeTypeID uint256 The ID of the required attribute type.\n@dev Note that it may be appropriate to require that the referenced\nattribute registry supports the correct interface via EIP-165.",
+            "id": 5769,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "id": 5762,
+                    "name": "registry",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 5757,
+                    "src": "886:8:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AttributeRegistryInterface_$32",
+                      "typeString": "contract AttributeRegistryInterface"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 5763,
+                    "name": "validAttributeTypeID",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 5759,
+                    "src": "896:20:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  }
+                ],
+                "id": 5764,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 5761,
+                  "name": "TPLBasicValidator",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 5650,
+                  "src": "868:17:15",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_TPLBasicValidator_$5650_$",
+                    "typeString": "type(contract TPLBasicValidator)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "868:49:15"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5760,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5757,
+                  "name": "registry",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5769,
+                  "src": "787:35:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_AttributeRegistryInterface_$32",
+                    "typeString": "contract AttributeRegistryInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 5756,
+                    "name": "AttributeRegistryInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 32,
+                    "src": "787:26:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AttributeRegistryInterface_$32",
+                      "typeString": "contract AttributeRegistryInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5759,
+                  "name": "validAttributeTypeID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5769,
+                  "src": "828:28:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5758,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "828:7:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "781:79:15"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 5765,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "918:0:15"
+            },
+            "scope": 5792,
+            "src": "770:186:15",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 5779,
+              "nodeType": "Block",
+              "src": "1184:47:15",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 5774,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 8217,
+                              "src": "1214:3:15",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 5775,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "1214:10:15",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 5773,
+                          "name": "_issueAttribute",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5632,
+                          "src": "1198:15:15",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$_t_bool_$",
+                            "typeString": "function (address) returns (bool)"
+                          }
+                        },
+                        "id": 5776,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1198:27:15",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 5772,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        8220,
+                        8221
+                      ],
+                      "referencedDeclaration": 8220,
+                      "src": "1190:7:15",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 5777,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1190:36:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5778,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1190:36:15"
+                }
+              ]
+            },
+            "documentation": "@notice Issue an attribute of the type with the default ID to `msg.sender`\non the jurisdiction. Values are left at zero and the method may be called\nby anyone.",
+            "id": 5780,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "issueAttribute",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5770,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1172:2:15"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 5771,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1184:0:15"
+            },
+            "scope": 5792,
+            "src": "1149:82:15",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 5790,
+              "nodeType": "Block",
+              "src": "1431:48:15",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 5785,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 8217,
+                              "src": "1462:3:15",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 5786,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "1462:10:15",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 5784,
+                          "name": "_revokeAttribute",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5649,
+                          "src": "1445:16:15",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$_t_bool_$",
+                            "typeString": "function (address) returns (bool)"
+                          }
+                        },
+                        "id": 5787,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1445:28:15",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 5783,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        8220,
+                        8221
+                      ],
+                      "referencedDeclaration": 8220,
+                      "src": "1437:7:15",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 5788,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1437:37:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5789,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1437:37:15"
+                }
+              ]
+            },
+            "documentation": "@notice Revoke an attribute from the type with the default ID from\n`msg.sender` on the jurisdiction. This method may be called by anyone.",
+            "id": 5791,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "revokeAttribute",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5781,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1419:2:15"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 5782,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1431:0:15"
+            },
+            "scope": 5792,
+            "src": "1395:84:15",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5793,
+        "src": "241:1240:15"
+      }
+    ],
+    "src": "0:1481:15"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.25+commit.59dbf8f1.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.0-beta.1",
+  "updatedAt": "2019-01-09T15:27:56.370Z"
+}

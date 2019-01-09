@@ -1,0 +1,10 @@
+{
+    "name": "props-tpl-contracts",
+    "version": "0.3.0",
+    "description": "Props TPL Contracts",
+    "title": "Props TPL Contracts",    
+    "template": {
+        "withCompare": true,
+        "withGenerator": false
+    }
+  }

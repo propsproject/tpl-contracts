@@ -1,0 +1,985 @@
+{
+  "contractName": "TPLERC20RestrictedReceiverInstance",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "approve",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "name": "addedValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "increaseAllowance",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getRegistry",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "receiver",
+          "type": "address"
+        }
+      ],
+      "name": "canReceive",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "name": "subtractedValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "decreaseAllowance",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfer",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "name": "spender",
+          "type": "address"
+        }
+      ],
+      "name": "allowance",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getValidAttributeID",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "initialBalance",
+          "type": "uint256"
+        },
+        {
+          "name": "registry",
+          "type": "address"
+        },
+        {
+          "name": "validAttributeTypeID",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Approval",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50604051606080610ab183398101604090815281516020830151919092015160038054600160a060020a031916600160a060020a0384161790556004819055610062338464010000000061006a810204565b50505061013b565b600160a060020a038216151561007f57600080fd5b600254610099908264010000000061080a61012282021704565b600255600160a060020a0382166000908152602081905260409020546100cc908264010000000061080a61012282021704565b600160a060020a0383166000818152602081815260408083209490945583518581529351929391927fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9281900390910190a35050565b60008282018381101561013457600080fd5b9392505050565b6109678061014a6000396000f3006080604052600436106100ae5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663095ea7b381146100b357806318160ddd146100eb57806323b872dd14610112578063395093511461013c5780635ab1bd531461016057806370a082311461019157806390d370ba146101b2578063a457c2d7146101d3578063a9059cbb146101f7578063dd62ed3e1461021b578063eac5a01c14610242575b600080fd5b3480156100bf57600080fd5b506100d7600160a060020a0360043516602435610257565b604080519115158252519081900360200190f35b3480156100f757600080fd5b506101006102d5565b60408051918252519081900360200190f35b34801561011e57600080fd5b506100d7600160a060020a03600435811690602435166044356102db565b34801561014857600080fd5b506100d7600160a060020a0360043516602435610425565b34801561016c57600080fd5b506101756104d5565b60408051600160a060020a039092168252519081900360200190f35b34801561019d57600080fd5b50610100600160a060020a03600435166104e4565b3480156101be57600080fd5b506100d7600160a060020a03600435166104ff565b3480156101df57600080fd5b506100d7600160a060020a03600435166024356105a9565b34801561020357600080fd5b506100d7600160a060020a03600435166024356105f4565b34801561022757600080fd5b50610100600160a060020a036004358116906024351661073c565b34801561024e57600080fd5b50610100610767565b6000600160a060020a038316151561026e57600080fd5b336000818152600160209081526040808320600160a060020a03881680855290835292819020869055805186815290519293927f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925929181900390910190a350600192915050565b60025490565b60035460048054604080517f4b5f297a000000000000000000000000000000000000000000000000000000008152600160a060020a03878116948201949094526024810192909252516000939290921691634b5f297a9160448082019260209290919082900301818787803b15801561035357600080fd5b505af1158015610367573d6000803e3d6000fd5b505050506040513d602081101561037d57600080fd5b5051151561041257604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602b60248201527f5472616e73666572206661696c6564202d207265636569766572206973206e6f60448201527f7420617070726f7665642e000000000000000000000000000000000000000000606482015290519081900360840190fd5b61041d84848461076d565b949350505050565b6000600160a060020a038316151561043c57600080fd5b336000908152600160209081526040808320600160a060020a0387168452909152902054610470908363ffffffff61080a16565b336000818152600160209081526040808320600160a060020a0389168085529083529281902085905580519485525191937f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925929081900390910190a350600192915050565b600354600160a060020a031690565b600160a060020a031660009081526020819052604090205490565b60035460048054604080517f4b5f297a000000000000000000000000000000000000000000000000000000008152600160a060020a03868116948201949094526024810192909252516000939290921691634b5f297a9160448082019260209290919082900301818787803b15801561057757600080fd5b505af115801561058b573d6000803e3d6000fd5b505050506040513d60208110156105a157600080fd5b505192915050565b6000600160a060020a03831615156105c057600080fd5b336000908152600160209081526040808320600160a060020a0387168452909152902054610470908363ffffffff61081c16565b60035460048054604080517f4b5f297a000000000000000000000000000000000000000000000000000000008152600160a060020a03878116948201949094526024810192909252516000939290921691634b5f297a9160448082019260209290919082900301818787803b15801561066c57600080fd5b505af1158015610680573d6000803e3d6000fd5b505050506040513d602081101561069657600080fd5b5051151561072b57604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602b60248201527f5472616e73666572206661696c6564202d207265636569766572206973206e6f60448201527f7420617070726f7665642e000000000000000000000000000000000000000000606482015290519081900360840190fd5b6107358383610833565b9392505050565b600160a060020a03918216600090815260016020908152604080832093909416825291909152205490565b60045490565b600160a060020a038316600090815260016020908152604080832033845290915281205482111561079d57600080fd5b600160a060020a03841660009081526001602090815260408083203384529091529020546107d1908363ffffffff61081c16565b600160a060020a0385166000908152600160209081526040808320338452909152902055610800848484610849565b5060019392505050565b60008282018381101561073557600080fd5b6000808383111561082c57600080fd5b5050900390565b6000610840338484610849565b50600192915050565b600160a060020a03831660009081526020819052604090205481111561086e57600080fd5b600160a060020a038216151561088357600080fd5b600160a060020a0383166000908152602081905260409020546108ac908263ffffffff61081c16565b600160a060020a0380851660009081526020819052604080822093909355908416815220546108e1908263ffffffff61080a16565b600160a060020a038084166000818152602081815260409182902094909455805185815290519193928716927fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef92918290030190a35050505600a165627a7a723058208cff5d208398b0d4e854bdfed4575013dfbca45fb2d6325366c95a366b982eb70029",
+  "deployedBytecode": "0x6080604052600436106100ae5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663095ea7b381146100b357806318160ddd146100eb57806323b872dd14610112578063395093511461013c5780635ab1bd531461016057806370a082311461019157806390d370ba146101b2578063a457c2d7146101d3578063a9059cbb146101f7578063dd62ed3e1461021b578063eac5a01c14610242575b600080fd5b3480156100bf57600080fd5b506100d7600160a060020a0360043516602435610257565b604080519115158252519081900360200190f35b3480156100f757600080fd5b506101006102d5565b60408051918252519081900360200190f35b34801561011e57600080fd5b506100d7600160a060020a03600435811690602435166044356102db565b34801561014857600080fd5b506100d7600160a060020a0360043516602435610425565b34801561016c57600080fd5b506101756104d5565b60408051600160a060020a039092168252519081900360200190f35b34801561019d57600080fd5b50610100600160a060020a03600435166104e4565b3480156101be57600080fd5b506100d7600160a060020a03600435166104ff565b3480156101df57600080fd5b506100d7600160a060020a03600435166024356105a9565b34801561020357600080fd5b506100d7600160a060020a03600435166024356105f4565b34801561022757600080fd5b50610100600160a060020a036004358116906024351661073c565b34801561024e57600080fd5b50610100610767565b6000600160a060020a038316151561026e57600080fd5b336000818152600160209081526040808320600160a060020a03881680855290835292819020869055805186815290519293927f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925929181900390910190a350600192915050565b60025490565b60035460048054604080517f4b5f297a000000000000000000000000000000000000000000000000000000008152600160a060020a03878116948201949094526024810192909252516000939290921691634b5f297a9160448082019260209290919082900301818787803b15801561035357600080fd5b505af1158015610367573d6000803e3d6000fd5b505050506040513d602081101561037d57600080fd5b5051151561041257604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602b60248201527f5472616e73666572206661696c6564202d207265636569766572206973206e6f60448201527f7420617070726f7665642e000000000000000000000000000000000000000000606482015290519081900360840190fd5b61041d84848461076d565b949350505050565b6000600160a060020a038316151561043c57600080fd5b336000908152600160209081526040808320600160a060020a0387168452909152902054610470908363ffffffff61080a16565b336000818152600160209081526040808320600160a060020a0389168085529083529281902085905580519485525191937f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925929081900390910190a350600192915050565b600354600160a060020a031690565b600160a060020a031660009081526020819052604090205490565b60035460048054604080517f4b5f297a000000000000000000000000000000000000000000000000000000008152600160a060020a03868116948201949094526024810192909252516000939290921691634b5f297a9160448082019260209290919082900301818787803b15801561057757600080fd5b505af115801561058b573d6000803e3d6000fd5b505050506040513d60208110156105a157600080fd5b505192915050565b6000600160a060020a03831615156105c057600080fd5b336000908152600160209081526040808320600160a060020a0387168452909152902054610470908363ffffffff61081c16565b60035460048054604080517f4b5f297a000000000000000000000000000000000000000000000000000000008152600160a060020a03878116948201949094526024810192909252516000939290921691634b5f297a9160448082019260209290919082900301818787803b15801561066c57600080fd5b505af1158015610680573d6000803e3d6000fd5b505050506040513d602081101561069657600080fd5b5051151561072b57604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602b60248201527f5472616e73666572206661696c6564202d207265636569766572206973206e6f60448201527f7420617070726f7665642e000000000000000000000000000000000000000000606482015290519081900360840190fd5b6107358383610833565b9392505050565b600160a060020a03918216600090815260016020908152604080832093909416825291909152205490565b60045490565b600160a060020a038316600090815260016020908152604080832033845290915281205482111561079d57600080fd5b600160a060020a03841660009081526001602090815260408083203384529091529020546107d1908363ffffffff61081c16565b600160a060020a0385166000908152600160209081526040808320338452909152902055610800848484610849565b5060019392505050565b60008282018381101561073557600080fd5b6000808383111561082c57600080fd5b5050900390565b6000610840338484610849565b50600192915050565b600160a060020a03831660009081526020819052604090205481111561086e57600080fd5b600160a060020a038216151561088357600080fd5b600160a060020a0383166000908152602081905260409020546108ac908263ffffffff61081c16565b600160a060020a0380851660009081526020819052604080822093909355908416815220546108e1908263ffffffff61080a16565b600160a060020a038084166000818152602081815260409182902094909455805185815290519193928716927fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef92918290030190a35050505600a165627a7a723058208cff5d208398b0d4e854bdfed4575013dfbca45fb2d6325366c95a366b982eb70029",
+  "sourceMap": "222:904:17:-;;;895:229;8:9:-1;5:2;;;30:1;27;20:12;5:2;895:229:17;;;;;;;;;;;;;;;;;;;;;;;;;1189:9:7;:48;;-1:-1:-1;;;;;;1189:48:7;-1:-1:-1;;;;;1189:48:7;;;;;1243:21;:44;;;1086:33:17;1092:10;895:229;1086:5;;;;:33;:::i;:::-;895:229;;;222:904;;5541:235:28;-1:-1:-1;;;;;5611:12:28;;;;5603:21;;;;;;5645:12;;:23;;5662:5;5645:16;;;;;;:23;:::i;:::-;5630:12;:38;-1:-1:-1;;;;;5695:18:28;;:9;:18;;;;;;;;;;;:29;;5718:5;5695:22;;;;;;:29;:::i;:::-;-1:-1:-1;;;;;5674:18:28;;:9;:18;;;;;;;;;;;:50;;;;5735:36;;;;;;;5674:18;;:9;;5735:36;;;;;;;;;;5541:235;;:::o;1272:131:26:-;1330:7;1357:5;;;1376:6;;;;1368:15;;;;;;1397:1;1272:131;-1:-1:-1;;;1272:131:26:o;222:904:17:-;;;;;;;",
+  "deployedSourceMap": "222:904:17:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2380:220:28;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;2380:220:28;-1:-1:-1;;;;;2380:220:28;;;;;;;;;;;;;;;;;;;;;;;;;640:83;;8:9:-1;5:2;;;30:1;27;20:12;5:2;640:83:28;;;;;;;;;;;;;;;;;;;;2958:283:7;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;2958:283:7;-1:-1:-1;;;;;2958:283:7;;;;;;;;;;;;3611:330:28;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;3611:330:28;-1:-1:-1;;;;;3611:330:28;;;;;;;1791:91:7;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1791:91:7;;;;;;;;-1:-1:-1;;;;;1791:91:7;;;;;;;;;;;;;;920:98:28;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;920:98:28;-1:-1:-1;;;;;920:98:28;;;;;1528:140:7;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1528:140:7;-1:-1:-1;;;;;1528:140:7;;;;;4397:340:28;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;4397:340:28;-1:-1:-1;;;;;4397:340:28;;;;;;;2374:239:7;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;2374:239:7;-1:-1:-1;;;;;2374:239:7;;;;;;;1335:150:28;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1335:150:28;-1:-1:-1;;;;;1335:150:28;;;;;;;;;;2024:102:7;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2024:102:7;;;;2380:220:28;2445:4;-1:-1:-1;;;;;2465:21:28;;;;2457:30;;;;;;2503:10;2494:20;;;;:8;:20;;;;;;;;-1:-1:-1;;;;;2494:29:28;;;;;;;;;;;;:37;;;2542:36;;;;;;;2494:29;;2503:10;2542:36;;;;;;;;;;;-1:-1:-1;2591:4:28;2380:220;;;;:::o;640:83::-;706:12;;640:83;:::o;2958:283:7:-;3080:9;;3107:21;;;3080:49;;;;;;-1:-1:-1;;;;;3080:49:7;;;;;;;;;;;;;;;;;;3053:4;;3080:9;;;;;:22;;:49;;;;;;;;;;;;;;;3053:4;3080:9;:49;;;5:2:-1;;;;30:1;27;20:12;5:2;3080:49:7;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;3080:49:7;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;3080:49:7;3065:123;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3201:35;3220:4;3226:2;3230:5;3201:18;:35::i;:::-;3194:42;2958:283;-1:-1:-1;;;;2958:283:7:o;3611:330:28:-;3711:4;-1:-1:-1;;;;;3733:21:28;;;;3725:30;;;;;;3811:10;3802:20;;;;:8;:20;;;;;;;;-1:-1:-1;;;;;3802:29:28;;;;;;;;;;:45;;3836:10;3802:45;:33;:45;:::i;:::-;3771:10;3762:20;;;;:8;:20;;;;;;;;-1:-1:-1;;;;;3762:29:28;;;;;;;;;;;;:86;;;3859:60;;;;;;3762:29;;3859:60;;;;;;;;;;;-1:-1:-1;3932:4:28;3611:330;;;;:::o;1791:91:7:-;1867:9;;-1:-1:-1;;;;;1867:9:7;1791:91;:::o;920:98:28:-;-1:-1:-1;;;;;997:16:28;975:7;997:16;;;;;;;;;;;;920:98::o;1528:140:7:-;1608:9;;1641:21;;;1608:55;;;;;;-1:-1:-1;;;;;1608:55:7;;;;;;;;;;;;;;;;;;1589:4;;1608:9;;;;;:22;;:55;;;;;;;;;;;;;;;1589:4;1608:9;:55;;;5:2:-1;;;;30:1;27;20:12;5:2;1608:55:7;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1608:55:7;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1608:55:7;;1528:140;-1:-1:-1;;1528:140:7:o;4397:340:28:-;4502:4;-1:-1:-1;;;;;4524:21:28;;;;4516:30;;;;;;4602:10;4593:20;;;;:8;:20;;;;;;;;-1:-1:-1;;;;;4593:29:28;;;;;;;;;;:50;;4627:15;4593:50;:33;:50;:::i;2374:239:7:-;2462:9;;2489:21;;;2462:49;;;;;;-1:-1:-1;;;;;2462:49:7;;;;;;;;;;;;;;;;;;2435:4;;2462:9;;;;;:22;;:49;;;;;;;;;;;;;;;2435:4;2462:9;:49;;;5:2:-1;;;;30:1;27;20:12;5:2;2462:49:7;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;2462:49:7;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;2462:49:7;2447:123;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2583:25;2598:2;2602:5;2583:14;:25::i;:::-;2576:32;2374:239;-1:-1:-1;;;2374:239:7:o;1335:150:28:-;-1:-1:-1;;;;;1456:15:28;;;1432:7;1456:15;;;:8;:15;;;;;;;;:24;;;;;;;;;;;;;1335:150::o;2024:102:7:-;2100:21;;2024:102;:::o;2872:288:28:-;-1:-1:-1;;;;;3006:14:28;;2975:4;3006:14;;;:8;:14;;;;;;;;3021:10;3006:26;;;;;;;;2997:35;;;2989:44;;;;;;-1:-1:-1;;;;;3069:14:28;;;;;;:8;:14;;;;;;;;3084:10;3069:26;;;;;;;;:37;;3100:5;3069:37;:30;:37;:::i;:::-;-1:-1:-1;;;;;3040:14:28;;;;;;:8;:14;;;;;;;;3055:10;3040:26;;;;;;;:66;3112:26;3049:4;3128:2;3132:5;3112:9;:26::i;:::-;-1:-1:-1;3151:4:28;2872:288;;;;;:::o;1272:131:26:-;1330:7;1357:5;;;1376:6;;;;1368:15;;;;;1078:131;1136:7;;1159:6;;;;1151:15;;;;;;-1:-1:-1;;1184:5:26;;;1078:131::o;1637:127:28:-;1698:4;1710:32;1720:10;1732:2;1736:5;1710:9;:32::i;:::-;-1:-1:-1;1755:4:28;1637:127;;;;:::o;4937:277::-;-1:-1:-1;;;;;5029:15:28;;:9;:15;;;;;;;;;;;5020:24;;;5012:33;;;;;;-1:-1:-1;;;;;5059:16:28;;;;5051:25;;;;;;-1:-1:-1;;;;;5101:15:28;;:9;:15;;;;;;;;;;;:26;;5121:5;5101:26;:19;:26;:::i;:::-;-1:-1:-1;;;;;5083:15:28;;;:9;:15;;;;;;;;;;;:44;;;;5149:13;;;;;;;:24;;5167:5;5149:24;:17;:24;:::i;:::-;-1:-1:-1;;;;;5133:13:28;;;:9;:13;;;;;;;;;;;;:40;;;;5184:25;;;;;;;5133:13;;5184:25;;;;;;;;;;;;;4937:277;;;:::o",
+  "source": "pragma solidity ^0.4.25;\n\nimport \"../examples/token/ERC20/TPLERC20RestrictedReceiver.sol\";\nimport \"../AttributeRegistryInterface.sol\";\n\n\n/**\n * @title An instance of TPLRestrictedReceiverToken with an initial balance.\n */\ncontract TPLERC20RestrictedReceiverInstance is TPLERC20RestrictedReceiver {\n  /**\n  * @notice The constructor function, with an associated attribute registry at\n  * `registry`, an assignable attribute type with ID `validAttributeTypeID`, and\n  * an initial balance of `initialBalance`.\n  * @param initialBalance uint256 The initial balance assigned to the deployer.  \n  * @param registry address The account of the associated attribute registry.  \n  * @param validAttributeTypeID uint256 The ID of the required attribute type.\n  * @dev Note that it may be appropriate to require that the referenced\n  * attribute registry supports the correct interface via EIP-165.\n  */\n  constructor(\n    uint256 initialBalance,\n    AttributeRegistryInterface registry,\n    uint256 validAttributeTypeID\n  ) public TPLERC20RestrictedReceiver(registry, validAttributeTypeID) {\n    _mint(msg.sender, initialBalance);\n  }\n}",
+  "sourcePath": "/Users/jretina/Programming/PROPSProject/tpl-contracts/contracts/mock/TPLERC20RestrictedReceiverInstance.sol",
+  "ast": {
+    "absolutePath": "/Users/jretina/Programming/PROPSProject/tpl-contracts/contracts/mock/TPLERC20RestrictedReceiverInstance.sol",
+    "exportedSymbols": {
+      "TPLERC20RestrictedReceiverInstance": [
+        5898
+      ]
+    },
+    "id": 5899,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5873,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".25"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:17"
+      },
+      {
+        "absolutePath": "/Users/jretina/Programming/PROPSProject/tpl-contracts/contracts/examples/token/ERC20/TPLERC20RestrictedReceiver.sol",
+        "file": "../examples/token/ERC20/TPLERC20RestrictedReceiver.sol",
+        "id": 5874,
+        "nodeType": "ImportDirective",
+        "scope": 5899,
+        "sourceUnit": 4881,
+        "src": "26:64:17",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/jretina/Programming/PROPSProject/tpl-contracts/contracts/AttributeRegistryInterface.sol",
+        "file": "../AttributeRegistryInterface.sol",
+        "id": 5875,
+        "nodeType": "ImportDirective",
+        "scope": 5899,
+        "sourceUnit": 33,
+        "src": "91:43:17",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 5876,
+              "name": "TPLERC20RestrictedReceiver",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4880,
+              "src": "269:26:17",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_TPLERC20RestrictedReceiver_$4880",
+                "typeString": "contract TPLERC20RestrictedReceiver"
+              }
+            },
+            "id": 5877,
+            "nodeType": "InheritanceSpecifier",
+            "src": "269:26:17"
+          }
+        ],
+        "contractDependencies": [
+          4880,
+          4895,
+          7140,
+          7209
+        ],
+        "contractKind": "contract",
+        "documentation": "@title An instance of TPLRestrictedReceiverToken with an initial balance.",
+        "fullyImplemented": true,
+        "id": 5898,
+        "linearizedBaseContracts": [
+          5898,
+          4880,
+          4895,
+          7140,
+          7209
+        ],
+        "name": "TPLERC20RestrictedReceiverInstance",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 5896,
+              "nodeType": "Block",
+              "src": "1080:44:17",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 5891,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 8217,
+                          "src": "1092:3:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 5892,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1092:10:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 5893,
+                        "name": "initialBalance",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5879,
+                        "src": "1104:14:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 5890,
+                      "name": "_mint",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7050,
+                      "src": "1086:5:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256)"
+                      }
+                    },
+                    "id": 5894,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1086:33:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5895,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1086:33:17"
+                }
+              ]
+            },
+            "documentation": "@notice The constructor function, with an associated attribute registry at\n`registry`, an assignable attribute type with ID `validAttributeTypeID`, and\nan initial balance of `initialBalance`.\n@param initialBalance uint256 The initial balance assigned to the deployer.  \n@param registry address The account of the associated attribute registry.  \n@param validAttributeTypeID uint256 The ID of the required attribute type.\n@dev Note that it may be appropriate to require that the referenced\nattribute registry supports the correct interface via EIP-165.",
+            "id": 5897,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "id": 5886,
+                    "name": "registry",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 5881,
+                    "src": "1048:8:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AttributeRegistryInterface_$32",
+                      "typeString": "contract AttributeRegistryInterface"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 5887,
+                    "name": "validAttributeTypeID",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 5883,
+                    "src": "1058:20:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  }
+                ],
+                "id": 5888,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 5885,
+                  "name": "TPLERC20RestrictedReceiver",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 4880,
+                  "src": "1021:26:17",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_TPLERC20RestrictedReceiver_$4880_$",
+                    "typeString": "type(contract TPLERC20RestrictedReceiver)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1021:58:17"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5884,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5879,
+                  "name": "initialBalance",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5897,
+                  "src": "912:22:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5878,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "912:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5881,
+                  "name": "registry",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5897,
+                  "src": "940:35:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_AttributeRegistryInterface_$32",
+                    "typeString": "contract AttributeRegistryInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 5880,
+                    "name": "AttributeRegistryInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 32,
+                    "src": "940:26:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AttributeRegistryInterface_$32",
+                      "typeString": "contract AttributeRegistryInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5883,
+                  "name": "validAttributeTypeID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5897,
+                  "src": "981:28:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5882,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "981:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "906:107:17"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 5889,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1080:0:17"
+            },
+            "scope": 5898,
+            "src": "895:229:17",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 5899,
+        "src": "222:904:17"
+      }
+    ],
+    "src": "0:1126:17"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/jretina/Programming/PROPSProject/tpl-contracts/contracts/mock/TPLERC20RestrictedReceiverInstance.sol",
+    "exportedSymbols": {
+      "TPLERC20RestrictedReceiverInstance": [
+        5898
+      ]
+    },
+    "id": 5899,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5873,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".25"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:17"
+      },
+      {
+        "absolutePath": "/Users/jretina/Programming/PROPSProject/tpl-contracts/contracts/examples/token/ERC20/TPLERC20RestrictedReceiver.sol",
+        "file": "../examples/token/ERC20/TPLERC20RestrictedReceiver.sol",
+        "id": 5874,
+        "nodeType": "ImportDirective",
+        "scope": 5899,
+        "sourceUnit": 4881,
+        "src": "26:64:17",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/jretina/Programming/PROPSProject/tpl-contracts/contracts/AttributeRegistryInterface.sol",
+        "file": "../AttributeRegistryInterface.sol",
+        "id": 5875,
+        "nodeType": "ImportDirective",
+        "scope": 5899,
+        "sourceUnit": 33,
+        "src": "91:43:17",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 5876,
+              "name": "TPLERC20RestrictedReceiver",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4880,
+              "src": "269:26:17",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_TPLERC20RestrictedReceiver_$4880",
+                "typeString": "contract TPLERC20RestrictedReceiver"
+              }
+            },
+            "id": 5877,
+            "nodeType": "InheritanceSpecifier",
+            "src": "269:26:17"
+          }
+        ],
+        "contractDependencies": [
+          4880,
+          4895,
+          7140,
+          7209
+        ],
+        "contractKind": "contract",
+        "documentation": "@title An instance of TPLRestrictedReceiverToken with an initial balance.",
+        "fullyImplemented": true,
+        "id": 5898,
+        "linearizedBaseContracts": [
+          5898,
+          4880,
+          4895,
+          7140,
+          7209
+        ],
+        "name": "TPLERC20RestrictedReceiverInstance",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 5896,
+              "nodeType": "Block",
+              "src": "1080:44:17",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 5891,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 8217,
+                          "src": "1092:3:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 5892,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1092:10:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 5893,
+                        "name": "initialBalance",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5879,
+                        "src": "1104:14:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 5890,
+                      "name": "_mint",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7050,
+                      "src": "1086:5:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256)"
+                      }
+                    },
+                    "id": 5894,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1086:33:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5895,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1086:33:17"
+                }
+              ]
+            },
+            "documentation": "@notice The constructor function, with an associated attribute registry at\n`registry`, an assignable attribute type with ID `validAttributeTypeID`, and\nan initial balance of `initialBalance`.\n@param initialBalance uint256 The initial balance assigned to the deployer.  \n@param registry address The account of the associated attribute registry.  \n@param validAttributeTypeID uint256 The ID of the required attribute type.\n@dev Note that it may be appropriate to require that the referenced\nattribute registry supports the correct interface via EIP-165.",
+            "id": 5897,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "id": 5886,
+                    "name": "registry",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 5881,
+                    "src": "1048:8:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AttributeRegistryInterface_$32",
+                      "typeString": "contract AttributeRegistryInterface"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 5887,
+                    "name": "validAttributeTypeID",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 5883,
+                    "src": "1058:20:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  }
+                ],
+                "id": 5888,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 5885,
+                  "name": "TPLERC20RestrictedReceiver",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 4880,
+                  "src": "1021:26:17",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_TPLERC20RestrictedReceiver_$4880_$",
+                    "typeString": "type(contract TPLERC20RestrictedReceiver)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1021:58:17"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5884,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5879,
+                  "name": "initialBalance",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5897,
+                  "src": "912:22:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5878,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "912:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5881,
+                  "name": "registry",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5897,
+                  "src": "940:35:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_AttributeRegistryInterface_$32",
+                    "typeString": "contract AttributeRegistryInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 5880,
+                    "name": "AttributeRegistryInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 32,
+                    "src": "940:26:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AttributeRegistryInterface_$32",
+                      "typeString": "contract AttributeRegistryInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5883,
+                  "name": "validAttributeTypeID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5897,
+                  "src": "981:28:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5882,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "981:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "906:107:17"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 5889,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1080:0:17"
+            },
+            "scope": 5898,
+            "src": "895:229:17",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 5899,
+        "src": "222:904:17"
+      }
+    ],
+    "src": "0:1126:17"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.25+commit.59dbf8f1.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.0-beta.1",
+  "updatedAt": "2019-01-09T15:27:56.381Z"
+}
