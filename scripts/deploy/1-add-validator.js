@@ -2,7 +2,7 @@
  * @apiDescription Add Validator to the props jurisdiction contract
  * @apiGroup PROPS Jurisdiction
  * @apiName Add Validator to Jurisdiction Contract 
- * @api {node} scripts/deploy/1-add-validator.js add_validator
+ * @api {node} scripts/deploy/1-add-validator add_validator
  * @apiParam {String} TPLType TPL Type "basic" or "extended"
  * @apiParam {String} OwnerPrivateKey Private key of Jurisdiction Contract Owner
  * @apiParam {String} Address Validator Ethereum Address
