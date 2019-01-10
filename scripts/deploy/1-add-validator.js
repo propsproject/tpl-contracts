@@ -51,8 +51,8 @@ if (typeof(networkName) === 'undefined') {
 console.log("networkName="+networkName);
 const connection = connectionConfig.networks[applicationConfig.networks[networkName].network]
 var ownerAccount;
-const deployMetadataFilename = 'build/contractDeploymentAddresses.json'
-const validatorsMetadataFilename = 'build/contractValidatorsAddresses.json'
+const deployMetadataFilename = 'build/contractDeploymentAddresses-'+networkName+'.json'
+const validatorsMetadataFilename = 'build/contractValidatorsAddresses-'+networkName+'.json'
 
 let deployAddresses;
 let validatorAddresses;
@@ -114,10 +114,23 @@ async function main() {
   const account = ownerAccount;
   web3.eth.accounts.wallet.add(account);
   web3.eth.defaultAccount = account.address;  
-    
+  
+  
+  
   await ContractInstance.methods.addValidator(
     validatorAddress,
     validatorDescription,
+  ).send({
+    from: account.address,
+    gas: 6000000,
+    gasPrice: 10 ** 9
+  }).catch(error => {
+    console.log(error);    
+  })
+
+  await ContractInstance.methods.addValidatorApproval(
+    validatorAddress,
+    deployAddresses.attributeId,
   ).send({
     from: account.address,
     gas: 6000000,
@@ -131,10 +144,6 @@ async function main() {
   }
   validatorAddresses.validators.push({'address': validatorAddress, 'description': validatorDescription});
   
-  const deployedAddress = ContractInstance.options.address
-  deployAddresses.jurisdiction = deployedAddress
-  console.log(`  jurisdiction: ${deployedAddress}`)
-
   fs.writeFile(
     validatorsMetadataFilename,
     JSON.stringify(validatorAddresses),

@@ -1,4 +1,49 @@
-# Transaction Permission Layer v1.1 (tpl-contracts)
+# Props TPL Deployment Steps
+- The deployment scripts are located under scripts/deploy
+- HTML Documentation of the script can be found here: [PROJECT PAGE](https://github.com/propsproject/tpl-contracts/blob/master/public/doc/index.html)
+
+## The scripts will handle the following tasks:
+
+- Deploy the Jurisdiction contract
+- Setup the attribute id and description to be used (Approved/KYCed)
+- Add Validator(s) and give them permission to update the attribute
+- Add Approved/KYCed addresses (from file)
+- Store All information in relevant json files in the build folder (e.g. contract address + owner, attribute info, validators, validated addresses and the transaction receipt data)
+
+  
+
+### You will need to have the following handy for contract deployment/setup:
+- Private key of the jurisdiction owner
+- Ethereum address for each validator to be added
+### If you wish to also validate addresses you will need also:
+- Private key of approved validator
+- File with account addresses for the validator to approve (newline delimited)
+
+  
+
+## Example Deployment
+
+### By Jurisdiction Owner
+
+> node scripts/deploy/0-deploy-props-jurisdiction.js {JurisdictionType} {OwnerPrivateKey} {Network}
+
+```node scripts/deploy/0-deploy-props-jurisdiction.js basic 02bd8464361b9368457a62753501005d77ca48c1a766bb73a68d02ab3ce1913b development```
+##### Deploys contract and adds the attribute
+
+> node scripts/deploy/1-add-validator.js {JurisdictionType} {OwnerPrivateKey} {ValidatorAddress} {ValidatorDescription} {Network}
+
+```node scripts/deploy/1-add-validator.js basic 02bd8464361b9368457a62753501005d77ca48c1a766bb73a68d02ab3ce1913b 0xe64F6fd8663674946E7527e11491e46b140A9890 Validator1 development```
+
+##### Adds Validator and gives it permission for setting the attribute (repeat for each validator you want to add)
+
+### By Validator
+
+> node scripts/deploy/2-validate-addresses.js {JurisdictionType} {ValidatorPrivateKey} {AddressesFilePath} {Network}
+
+```node scripts/deploy/2-validate-addresses.js basic f34381274ac5cca8a465209bdeafeed0274ddcf7ba1df080df772b73ccad032a csv/kyc/addresses.csv development```
+
+##### Adds attribute to account addresses from file
+# Forked from Transaction Permission Layer v1.1 (tpl-contracts)
 
 ![banner](images/TPL_01@3x.png)
 

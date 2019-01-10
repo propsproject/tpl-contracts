@@ -1,5 +1,5 @@
 /**
- * @apiDescription Deploy the props jurisdiction contract
+ * @apiDescription Deploy the props jurisdiction contract with the KYC attribuetId
  * @apiGroup PROPS Jurisdiction
  * @apiName Deploy Jurisdiction Contract 
  * @api {node} scripts/deploy/0-deploy-props-jurisdiction deploy
@@ -25,6 +25,8 @@
 var fs = require('fs');
 const applicationConfig = require('../../config.js')
 const connectionConfig = require('../../truffle.js')
+const attributeId = 1;
+const attributeDescription = 'Wallet has been KYCed'
 
 let networkName = process.argv[4] // Provide if you'd like to dump accounts
 if (typeof(networkName) === 'undefined') {
@@ -33,7 +35,7 @@ if (typeof(networkName) === 'undefined') {
 console.log("networkName="+networkName);
 const connection = connectionConfig.networks[applicationConfig.networks[networkName].network]
 var ownerAccount;
-const deployMetadataFilename = 'build/contractDeploymentAddresses.json'
+const deployMetadataFilename = 'build/contractDeploymentAddresses-'+networkName+'.json'
 
 let deployAddresses
 try {
@@ -106,6 +108,22 @@ async function main() {
   const deployedAddress = ContractInstance.options.address
   deployAddresses.jurisdiction = deployedAddress
   console.log(`  jurisdiction: ${deployedAddress}`)
+
+  //add the kyc attribute
+  await ContractInstance.methods.addAttributeType(
+    attributeId,
+    attributeDescription,
+  ).send({
+    from: account.address,
+    gas: 6000000,
+    gasPrice: 10 ** 9
+  }).then((receipt) => {
+    deployAddresses.attributeId = attributeId;
+    deployAddresses.attributeDescription = attributeDescription;
+    deployAddresses.addAttributeReceipt = receipt    
+  }).catch(error => {
+    console.log(error);    
+  })
 
   fs.writeFile(
     deployMetadataFilename,
