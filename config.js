@@ -10,5 +10,10 @@ module.exports = {
       TPLTokenAttributeID: 0,
       TPLTokenTotalSupply: 100
     },
+    infurarinkeby: {
+      network: 'infurarinkeby',
+      TPLTokenAttributeID: 0,
+      TPLTokenTotalSupply: 100
+    }
   }
 }

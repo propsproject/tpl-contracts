@@ -25,24 +25,14 @@
 var fs = require('fs');
 const applicationConfig = require('../../config.js')
 const connectionConfig = require('../../truffle.js')
+
+//initialization
 const attributeId = 1;
-const attributeDescription = 'Wallet has been KYCed'
+const attributeDescription = 'Wallet has been KYCed';
+let ownerAccount;
+let deployAddresses;
 
-let networkName = process.argv[4] // Provide if you'd like to dump accounts
-if (typeof(networkName) === 'undefined') {
-  networkName = 'development';
-}
-console.log("networkName="+networkName);
-const connection = connectionConfig.networks[applicationConfig.networks[networkName].network]
-var ownerAccount;
-const deployMetadataFilename = 'build/contractDeploymentAddresses-'+networkName+'.json'
-
-let deployAddresses
-try {
-  deployAddresses = require(`../../${deployMetadataFilename}`)
-} catch(error) {
-  deployAddresses = {}
-}
+//deal with the args
 
 let deployType = process.argv[2] // Provide Basic or Extended jurisdiction type
 if (typeof(deployType) === 'undefined') {
@@ -56,6 +46,24 @@ if (typeof(pk) === 'undefined') {
   console.error('must supply private key of jurisdiction account owner')
   process.exit(1)
 }
+
+process.env['SENDER_PK'] = pk;
+
+let networkName = process.argv[4] // Provide if you'd like to dump accounts
+if (typeof(networkName) === 'undefined') {
+  networkName = 'development';
+}
+
+const connection = connectionConfig.networks[applicationConfig.networks[networkName].network]
+
+const deployMetadataFilename = 'build/contractDeploymentAddresses-'+networkName+'.json'
+
+try {
+  deployAddresses = require(`../../${deployMetadataFilename}`)
+} catch(error) {
+  deployAddresses = {}
+}
+
 
 const deployTypeOptions = new Set(['basic', 'extended'])
 if (!deployTypeOptions.has(deployType)) {
@@ -86,6 +94,7 @@ async function main() {
       applicationConfig.networks[networkName].network
     } network...`
   )
+  
   
   ownerAccount = web3.eth.accounts.privateKeyToAccount('0x'+pk);  
   
